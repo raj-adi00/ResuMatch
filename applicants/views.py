@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from accounts.middleware import RoleBasedRedirectMiddleware
 
-# Create your views here.
+def dashboard_view(request):
+    return render(request, 'applicants/dashboard.html')

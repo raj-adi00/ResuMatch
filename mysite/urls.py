@@ -25,11 +25,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', include('core.urls')),  # include your core app urls
-# ]
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -38,7 +35,9 @@ urlpatterns = [
     # path('jobs/', include('jobs.urls')),           # job posting
     # path('resumes/', include('resumes.urls')),     # resume upload
     # path('applications/', include('applications.urls')),  # apply to jobs
-    path('', include('core.urls')),                # homepage + matching
+    path('accounts/', include('accounts.urls')),
+    path('applicants/', include('applicants.urls')),  # applicant dashboard at /applicants/dashboard/
+    path('company/', include('company.urls')),      # company dashboard at /company/dashboard/
 ]
 
 
