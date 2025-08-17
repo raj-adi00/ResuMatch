@@ -8,6 +8,7 @@ class User(AbstractUser):
         ('company','Company')
     )
     role=models.CharField(max_length=15,choices=USER_ROLES)
+    email = models.EmailField(unique=True)
     
     def __str__(self):
         return f"{self.username} ({self.role})"
